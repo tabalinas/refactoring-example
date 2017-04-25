@@ -8,11 +8,11 @@ public class SimpleLogger {
     private boolean includeStacktrace;
     private boolean isVerbose;
 
-    public SimpleLogger(String path, LoggerInterface currentLoggingLevel, boolean includeStacktrace, boolean isVerbose) {
-        this.path = path;
-        this.currentLoggingLevel = currentLoggingLevel;
-        this.includeStacktrace = includeStacktrace;
-        this.isVerbose = isVerbose;
+    public SimpleLogger(LoggerConfig loggerConfig) {
+        this.path = loggerConfig.getPath();
+        this.currentLoggingLevel = loggerConfig.getCurrentLoggingLevel();
+        this.includeStacktrace = loggerConfig.isIncludeStacktrace();
+        this.isVerbose = loggerConfig.isVerbose();
     }
 
     public void log(String message) {
